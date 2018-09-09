@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
-import './App.css';
-import Checkpoint from "./Components/Checkpoint";
-import {getPageData} from "./State/state";
-import { withCookies, Cookies } from 'react-cookie';
-import { Icon, Overlay } from "@blueprintjs/core";
+import React, { Component } from 'react'
+import './App.css'
+import Checkpoint from "./Components/Checkpoint"
+import Success from "./Components/Success"
+import {getPageData} from "./State/state"
+import { withCookies, Cookies } from 'react-cookie'
+import { Icon, Overlay } from "@blueprintjs/core"
 
 class App extends Component {
    
@@ -22,7 +23,7 @@ class App extends Component {
 
       // url parameter
       cookies.set('QRnonerka', 
-          Object.assign(stationdata, 
+          Object.assign({}, stationdata, 
             {[props.match.params.number]: (new Date()).getTime()}
           )
         )
@@ -56,8 +57,8 @@ class App extends Component {
             </Overlay>
           </div>
         </header>
-        {(this.state.pos && checkpointProps) &&
-        <Checkpoint {...checkpointProps}/>
+        {(this.state.pos && checkpointProps && this.state.stations) &&
+        (this.state.stations.length == 7)? <Success /> :<Checkpoint {...checkpointProps}/>
         }
       </div>
     )
