@@ -9,7 +9,7 @@ const pageData = [
     imageUrl: './resources/DSC_7859.jpg',
     title: 'Cat Statue',
     text: 'This is a cat. Lorem Ipsum and so on...',
-    hint: 'This is a hint. To find the next spot, turn around three times an d spit on the floor and so on ...',
+    hint: 'This is a hint. To find the next spot, turn around three times and spit on the floor and so on ...',
     mapsLink: 'http://maps.google.com'
   }
 ]
