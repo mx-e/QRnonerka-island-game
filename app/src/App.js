@@ -6,39 +6,55 @@ import { withCookies, Cookies } from 'react-cookie';
 
 class App extends Component {
    
-  constructor(props) {
-    super(props)
- 
-    const { cookies } = props;
-    const stationdata = {}
-    try {
-      const stationdata = JSON.parse(cookies.get('QRnonerka'))
-      console.log(stationdata)
-    }
-    catch(e) {
-    }
+    constructor(props) {
+      super(props)
+   
+      const { cookies } = props;
+      
+      let stationdata = {}
+      try {
+        console.log(cookies.get('QRnonerka'))
+        stationdata = cookies.get('QRnonerka')
+      }
+      catch(e) {
+      }
 
-    this.state = {
-      stations: stationdata,
-      data: getPageData(1)
-    }
+        // url parameter
+      const currentUrl = window.location.href
+      const urlParams = currentUrl ? currentUrl.split('?')[1] : null
 
-    cookies.set('QRnonerka', JSON.stringify(
-      Object.assign(stationdata, 
-        {'1': (new Date()).getTime()}
+      let firstParamValue = null
+      if(urlParams) {
+        let firstParam = urlParams.split('&')[0].split('#')[0]
+        firstParamValue = parseInt(firstParam.split('=')[1])
+        firstParamValue = isNaN(firstParamValue) ? null : firstParamValue
+        cookies.set('QRnonerka', 
+          Object.assign(stationdata, 
+            {[firstParamValue]: (new Date()).getTime()}
+          )
         )
-      )
-    )
+      }
+
+      this.state = {
+        pos: firstParamValue,
+        stations: stationdata,
+        maxId: 0
+      }
   }
 
   render() {
+    const checkpointProps = getPageData(this.state.pos)
+
     return (
       <div className="App">
         <header className="App-header">
         {JSON.stringify(this.state.stations)}
           <h1 className="App-title">QRnonerka</h1>
+        }
         </header>
-        <Checkpoint {...this.state.data}/>
+        {(this.state.pos && checkpointProps) &&
+        <Checkpoint {...checkpointProps}/>
+        }
       </div>
     );
   }
