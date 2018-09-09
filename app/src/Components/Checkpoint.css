@@ -1,12 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans|Roboto');
+
+
+
 .imageWrapper{
-    height: 30vh;
+    height: 66vw;
     background-color: darkgrey;
 }
 
+.imageWrapper img {
+    width: 100% ;
+}
+
 .textWrapper{
-    background-color: aliceblue;
+    font-family: 'Nunito Sans', 'Roboto', sans-serif;
+    background-color: lightgrey;
+    padding: 10px;
+}
+
+.text{
+   text-align: left;
 }
 
 .hintWrapper{
-    background-color: antiquewhite;
+    font-family: 'Nunito Sans', 'Roboto', sans-serif;
+    background-color: #222;
+    padding: 10px;
+    color: white;
+}
+
+.hint{
+    text-align: left;
 }

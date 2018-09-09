@@ -6,12 +6,19 @@ const Checkpoint = (props) => {
 
   return (
     <div>
-      <div className={'imageWrapper'}></div>
+      <div className={'imageWrapper'}><img src={props.imageUrl}/></div>
       <div className={'textWrapper'}>
-        <h3>TITLE</h3>
-        <p></p>
+        <div className={'text'}>
+          <h3>{props.title.toUpperCase()}</h3>
+          <p>{props.text}</p>
+        </div>
+    </div>
+      <div className={'hintWrapper'}>
+        <div className={'hint'}>
+          <h3> HINT </h3>
+          <p>{props.hint}</p>
+        </div>
       </div>
-      <div className={'hintWrapper'}></div>
     </div>
   )
 }

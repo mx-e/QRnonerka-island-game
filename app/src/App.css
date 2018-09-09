@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans|Roboto');
+
 .App {
   text-align: center;
 }
@@ -8,6 +10,7 @@
 }
 
 .App-header {
+  font-family: 'Nunito Sans', 'Roboto', sans-serif;
   background-color: #222;
   height: 50px;
   padding: 20px;
