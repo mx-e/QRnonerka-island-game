@@ -3,13 +3,14 @@ import './App.css';
 import Checkpoint from "./Components/Checkpoint";
 import {getPageData} from "./State/state";
 import { withCookies, Cookies } from 'react-cookie';
+import { Icon, Overlay } from "@blueprintjs/core";
 
 class App extends Component {
    
     constructor(props) {
       super(props)
-   
-      const { cookies } = props;
+      console.log(props)
+      const { cookies } = props
       
       let stationdata = {}
       try {
@@ -19,44 +20,53 @@ class App extends Component {
       catch(e) {
       }
 
-        // url parameter
-      const currentUrl = window.location.href
-      const urlParams = currentUrl ? currentUrl.split('?')[1] : null
-
-      let firstParamValue = null
-      if(urlParams) {
-        let firstParam = urlParams.split('&')[0].split('#')[0]
-        firstParamValue = parseInt(firstParam.split('=')[1])
-        firstParamValue = isNaN(firstParamValue) ? null : firstParamValue
-        cookies.set('QRnonerka', 
+      // url parameter
+      cookies.set('QRnonerka', 
           Object.assign(stationdata, 
-            {[firstParamValue]: (new Date()).getTime()}
+            {[props.match.params.number]: (new Date()).getTime()}
           )
         )
-      }
 
       this.state = {
-        pos: firstParamValue,
+        pos: parseInt(props.match.params.number),
         stations: stationdata,
-        maxId: 0
+        maxId: 0,
+        overlayIsOpen: false
       }
-  }
+
+
+      this.toggleOverlay = this.toggleOverlay.bind(this)
+    }
+
 
   render() {
     const checkpointProps = getPageData(this.state.pos)
-
+    console.log(checkpointProps)
     return (
       <div className="App">
         <header className="App-header">
-        {JSON.stringify(this.state.stations)}
           <h1 className="App-title">QRnonerka</h1>
-        }
+          <div className={'infoOverlayWrapper'}>
+            <Icon icon={'info-sign'} icon-size={24} onClick={this.toggleOverlay}/>
+            <Overlay isOpen={this.state.overlayIsOpen} onClose={this.toggleOverlay}>
+              <div className={'overlayContentWrapper'} onClick={this.toggleOverlay}>
+                <h1>About This Project</h1>
+                <p>Some information about this Project</p>
+              </div>
+            </Overlay>
+          </div>
         </header>
         {(this.state.pos && checkpointProps) &&
         <Checkpoint {...checkpointProps}/>
         }
       </div>
-    );
+    )
+  }
+
+  toggleOverlay() {
+      this.setState(state => Object.assign({}, state, {
+        overlayIsOpen: !state.overlayIsOpen
+      }))
   }
 }
 
