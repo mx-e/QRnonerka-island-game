@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans|Roboto');
+@import "~@blueprintjs/core/lib/css/blueprint.css";
 
 .App {
   text-align: center;
@@ -12,13 +13,22 @@
 .App-header {
   font-family: 'Nunito Sans', 'Roboto', sans-serif;
   background-color: #222;
-  height: 50px;
+  height: 80px;
   padding: 20px;
   color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .App-title {
   font-size: 1.5em;
+  flex: 8 1 auto;
+}
+
+.infoOverlayWrapper{
+  flex: 0 1 auto;
 }
 
 .App-intro {
@@ -28,4 +38,22 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.overlayContentWrapper {
+  font-family: 'Nunito Sans', 'Roboto', sans-serif;
+  width: 100%;
+  height: 100%;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.iconContainer {
+  margin-right: 20vw;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
 }
