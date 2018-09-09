@@ -1,0 +1,12 @@
+.imageWrapper{
+    height: 30vh;
+    background-color: darkgrey;
+}
+
+.textWrapper{
+    background-color: aliceblue;
+}
+
+.hintWrapper{
+    background-color: antiquewhite;
+}
