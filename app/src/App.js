@@ -9,41 +9,39 @@ class App extends Component {
    
     constructor(props) {
       super(props)
-   
-      const { cookies } = props;
+      console.log(props)
+      const { cookies } = props
       
-      const stationdata = {}
+      let stationdata = {}
       try {
-        const stationdata = JSON.parse(cookies.get('QRnonerka'))
+        console.log(cookies.get('QRnonerka'))
+        stationdata = cookies.get('QRnonerka')
       }
       catch(e) {
       }
 
+      // url parameter
+      cookies.set('QRnonerka', 
+          Object.assign(stationdata, 
+            {[props.match.params.number]: (new Date()).getTime()}
+          )
+        )
+
       this.state = {
+        pos: parseInt(props.match.params.number),
         stations: stationdata,
         maxId: 0,
         overlayIsOpen: false
       }
 
-      cookies.set('QRnonerka', JSON.stringify({}))
 
       this.toggleOverlay = this.toggleOverlay.bind(this)
     }
 
 
   render() {
-    const currentUrl = window.location.href
-    const urlParams = currentUrl ? currentUrl.split('?')[1] : null
-
-    let firstParamValue = null
-    if(urlParams) {
-      let firstParam = urlParams.split('&')[0].split('#')[0]
-      firstParamValue = parseInt(firstParam.split('=')[1])
-      firstParamValue = isNaN(firstParamValue) ? null : firstParamValue
-    }
-
-    const checkpointProps = getPageData(firstParamValue)
-
+    const checkpointProps = getPageData(this.state.pos)
+    console.log(checkpointProps)
     return (
       <div className="App">
         <header className="App-header">
@@ -58,7 +56,7 @@ class App extends Component {
             </Overlay>
           </div>
         </header>
-        {(firstParamValue && checkpointProps) &&
+        {(this.state.pos && checkpointProps) &&
         <Checkpoint {...checkpointProps}/>
         }
       </div>
