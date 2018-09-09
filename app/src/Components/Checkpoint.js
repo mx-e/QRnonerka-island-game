@@ -1,5 +1,6 @@
 import React from 'react'
 import './Checkpoint.css'
+import {Button} from '@blueprintjs/core'
 
 const Checkpoint = (props) => {
 
@@ -17,6 +18,9 @@ const Checkpoint = (props) => {
         <div className={'hint'}>
           <h3> HINT </h3>
           <p>{props.hint}</p>
+          <Button onClick={() => {
+            window.location = props.mapsLink
+          }}>get Coordinates</Button>
         </div>
       </div>
     </div>

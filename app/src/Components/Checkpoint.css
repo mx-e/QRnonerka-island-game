@@ -31,3 +31,7 @@
 .hint{
     text-align: left;
 }
+
+.hint button {
+    margin-top: 10px;
+}
