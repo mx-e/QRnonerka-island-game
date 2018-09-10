@@ -88,7 +88,7 @@ const pageData = [
     id: 8980,
     imageUrl: './resources/DSC_7859.jpg',
     title: 'Everlasting Memory',
-    text: '',
+    text: 'On the night of 10 to 11 September, 1941 Kanonersky Island was attacked by nazi. There were dropped thousands of incendiary and high-explosive bombs. The island was burning, but people stood firm!\n' + 'Let us honor their memory with a minute’s silence',
     hint: 'This is a hint. To find the next spot, turn around three times and spit on the floor and so on ...',
     mapsLink: 'http://maps.google.com'
   },
