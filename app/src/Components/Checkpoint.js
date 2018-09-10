@@ -14,6 +14,7 @@ const Checkpoint = (props) => {
           <p>{props.text}</p>
         </div>
     </div>
+      {props.hint &&
       <div className={'hintWrapper'}>
         <div className={'hint'}>
           <h3> HINT </h3>
@@ -23,6 +24,7 @@ const Checkpoint = (props) => {
           }}>get Coordinates</Button>
         </div>
       </div>
+      }
     </div>
   )
 }
