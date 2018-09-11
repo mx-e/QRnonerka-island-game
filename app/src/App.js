@@ -52,7 +52,11 @@ class App extends Component {
             <Overlay isOpen={this.state.overlayIsOpen} onClose={this.toggleOverlay}>
               <div className={'overlayContentWrapper'} onClick={this.toggleOverlay}>
                 <h1>About This Project</h1>
-                <p>Some information about this Project</p>
+                <p>Do you know about Kanoniersky Island? 
+                Are you aware of its long history? <br /> <br />
+
+                We invite you to play a game about this place. You will see many hidden spots and explore the island. Do you for example know the former name of Kanoniersky Island? Why is there a cat statue?  <br />
+                For the quest, you only need your smartphone: All over the island, you will find QR codes. You scan these codes with your phone - then they will lead you to other places. <br /> Are you ready? Let's begin!</p>
               </div>
             </Overlay>
           </div>
