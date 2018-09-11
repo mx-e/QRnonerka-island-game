@@ -14,17 +14,17 @@ const Checkpoint = (props) => {
           <p>{props.text}</p>
         </div>
     </div>
-      {props.hint &&
       <div className={'hintWrapper'}>
+       { props.hint &&
         <div className={'hint'}>
           <h3> HINT </h3>
           <p>{props.hint}</p>
-          <Button onClick={() => {
-            window.location = props.mapsLink
-          }}>get Coordinates</Button>
         </div>
-      </div>
       }
+      <Button onClick={() => {
+        window.location = props.mapsLink
+      }}>get Coordinates</Button>
+      </div>
     </div>
   )
 }
