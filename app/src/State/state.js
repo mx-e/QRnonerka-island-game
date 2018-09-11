@@ -9,7 +9,7 @@ const pageData = [
     imageUrl: './resources/DSC_7859.jpg',
     title: 'A Friend of Kanonersky',
     text: 'Next to the port office you can see a stone sculpture of a "humanized" cat. He dressed in trousers, a shirt, a cap, boots, and a kerchief on its neck. He is a sort of "yard boy". Previously, the Kanonerskiy island belonged to Finland. It was called Kissasaary. It means "Cat Island" in Finnish. Now the cat reminds us about the island past. Unfortunately the cat still does not have a name. The locals call him just like a cat on a stone. How would you call the dandy in a cap?',
-    hint: 'This is a hint. To find the next spot, turn around three times and spit on the floor and so on ...',
+    hint: '',
     mapsLink: `https://www.google.com/maps/place/59°54'03.5"N+30°12'40.0"E/`
   },
   {
@@ -49,7 +49,7 @@ const pageData = [
     imageUrl: './resources/DSC_7859.jpg',
     title: 'White Island',
     text: 'Wastewater treatment plant of St. Petersburg is located on an artificial island. It is the oldest system of treatment facilities in the city, accepts domestic, industrial and surface waste water. The first part of the station began to work in 1978 and now it works observing the standards of the Helsinki Commission.',
-    hint: 'This is a hint. To find the next spot, turn around three times and spit on the floor and so on ...',
+    hint: 'The next station is at a pole near the entrance to the place where the cat resides.',
     mapsLink: `https://www.google.com/maps/place/59°54'12.8"N+30°13'19.0"E/`
   },
   {
@@ -81,7 +81,7 @@ const pageData = [
     imageUrl: './resources/DSC_7859.jpg',
     title: 'The Bridge',
     text: 'Now you are standing almost below the huge Western High-Speed Diameter of St. Petersburg (ZSD). First some facts: The motorway was built between 2008 - 2016 and cost 210 billion rubles. It is possible for car drivers to cross the city in less than 20 minutes when using this 47-kilometres road.  But there are also some problems at this place, caused by the motorway`s noise and dust. To reduce the noise, authorities already built a second floor and a noise-protection wall on the motorway. But noise measurements still show significant violations of the allowed amount of noise at residential places. In addition, there are sometimes things falling down from the road. By now, a few buildings are abandoned because living there is not healthy anymore. To care about the residents of Kanoniersky Island, there is currently the suggestion of a new protection against the noise. Do you like this idea? What do you think about living near the bridge?',
-    hint: 'This is a hint. To find the next spot, turn around three times and spit on the floor and so on ...',
+    hint: 'The next station is hidden at a pole between the playground and the half-abandoned building.',
     mapsLink: `https://www.google.com/maps/place/59°54'03.8"N+30°13'05.5"E/`
   },
   {
@@ -91,5 +91,13 @@ const pageData = [
     text: 'On the night of 10 to 11 September, 1941 Kanonersky Island was attacked by nazi. There were dropped thousands of incendiary and high-explosive bombs. The island was burning, but people stood firm!\n' + 'Let us honor their memory with a minute’s silence',
     hint: 'This is a hint. To find the next spot, turn around three times and spit on the floor and so on ...',
     mapsLink: `https://www.google.com/maps/place/59°54'06.5"N+30°13'10.0"E/`
+  },
+  {
+    id: 2323,
+    imageUrl: './resources/DSC_7859.jpg',
+    title: 'Everlasting Memory',
+    text: '',
+    hint: 'This is a hint. To find the next spot, turn around three times and spit on the floor and so on ...',
+    mapsLink: `https://www.google.com/maps/`
   },
 ]
