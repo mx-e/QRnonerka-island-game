@@ -9,7 +9,7 @@ const pageData = [
     imageUrl: './resources/DSC_7859.jpg',
     title: 'A Friend of Kanonersky',
     text: 'Next to the port office you can see a stone sculpture of a "humanized" cat. He dressed in trousers, a shirt, a cap, boots, and a kerchief on its neck. He is a sort of "yard boy". Previously, the Kanonerskiy island belonged to Finland. It was called Kissasaary. It means "Cat Island" in Finnish. Now the cat reminds us about the island past. Unfortunately the cat still does not have a name. The locals call him just like a cat on a stone. How would you call the dandy in a cap?',
-    hint: 'The next QR code watches over the next station from a pole nearby like a silent guardian.',
+    hint: '',
     mapsLink: `https://www.google.com/maps/place/59°54'03.5"N+30°12'40.0"E/`
   },
   {
@@ -41,7 +41,7 @@ const pageData = [
     imageUrl: './resources/DSC_8198.jpg',
     title: 'The Round Island',
     text: 'On the opposite site of the canal you see another island. It is connected with the Kanonerskiy island with an underwater tonal that was opened in 1983. Its name is the Gutuevsky Island. The name comes from the owner of the island. His name is Konon Gutuev. He belong to the merchant class. The island is famous by its sea port and Church Of The Epiphany. Have you ever been to Gutuevsky before?',
-    hint: '',
+    hint: 'The next QR code watches over the next station from a pole nearby like a silent guardian.',
     mapsLink: `https://www.google.com/maps/place/59°54'08.9"N+30°13'13.4"E/`
   },
   {
